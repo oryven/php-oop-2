@@ -24,102 +24,117 @@
      * 
      */ -->
 
-     <?php
+<?php
 
-class Persona {
+class Persona
+{
+    private $nome;
+    private $cognome;
+    private $dataDiNascita;
 
-private $nome;
-private $cognome;
-private $dataDiNascita;
+    public function __construct($nome, $cognome, $dataDiNascita)
+    {
 
-public function __construct($nome, $cognome, $dataDiNascita) {
-
-    $this -> setNome($nome);
-    $this -> setCognome($cognome);
-    $this -> setDataDiNascita($dataDiNascita);
+        $this->setNome($nome);
+        $this->setCognome($cognome);
+        $this->setDataDiNascita($dataDiNascita);
     }
 
-    public function getNome() {
+    public function getNome()
+    {
 
-        return $this -> nome;
+        return $this->nome;
     }
-    public function setNome($nome) {
+    public function setNome($nome)
+    {
 
-        $this -> nome = $nome;
+        $this->nome = $nome;
     }
-    public function getCognome() {
+    public function getCognome()
+    {
 
-        return $this -> cognome;
+        return $this->cognome;
     }
-    public function setCognome($cognome) {
+    public function setCognome($cognome)
+    {
 
-        $this -> cognome = $cognome;
-    }
-
-    public function getDataDiNascita() {
-
-    return $this -> dataDiNascita;
-    }
-    public function setDataDiNascita($dataDiNascita) {
-
-    $this -> dataDiNascita = $dataDiNascita;
+        $this->cognome = $cognome;
     }
 
-    public function printFullPerson(){
+    public function getDataDiNascita()
+    {
 
-        return $this -> getNome() . $this -> getCognome() . $this -> getDataDiNascita();
+        return $this->dataDiNascita;
+    }
+    public function setDataDiNascita($dataDiNascita)
+    {
+
+        $this->dataDiNascita = $dataDiNascita;
     }
 
-    public function __toString(){
-        return "persona" . $this -> nome . $this -> cognome . $this -> dataDiNascita;
+    public function printFullPerson()
+    {
+
+        return $this->getNome() . " " . $this->getCognome() . " " . $this->getDataDiNascita();
     }
-} 
+
+    public function __toString()
+    {
+        return $this->printFullPerson();
+    }
+}
 
 $p1 = new Persona("mario", "rossi", "01/01/2000");
-$p2 = new persona("paolo", "bianchi","02/03/2010");
+$p2 = new persona("paolo", "bianchi", "02/03/2010");
 echo $p1 . "<br>";
 echo $p2;
 echo "<br> -------------------- <br>";
+class Employee extends Persona
+{
+    private $stipendio;
+    private $dataAssunzione;
 
-
-
-class Employee extends persona {
-
-private $stipendio;
-private $dataAssunzione;
-
-public function __construct($nome, $cognome, $stipendio) {
-
-    parent:: __construct($nome, $cognome);
-    $this -> setStipendio($stipendio);
-
-    public function getStipendio() {
-
-        return $this -> stipendio;
-    }
-    public function setStipendio($stipendio) {
-
-        $this -> stipendio = $stipendio;
+    public function __construct($nome, $cognome, $dataDiNascita, $stipendio)
+    {
+        parent::__construct($nome, $cognome, $dataDiNascita);
+        $this->setStipendio($stipendio);
     }
 
-    public function dataAssunzione() {
+    public function getStipendio()
+    {
 
-        return $this -> dataAssunzione;
+        return $this->stipendio;
+    }
+    public function setStipendio($stipendio)
+    {
+
+        $this->stipendio = $stipendio;
     }
 
-    public function setdataAssunzione($dataAssunzione) {
+    public function getDataAssunzione()
+    {
 
-        $this -> dataAssunzione = $dataAssunzione;
+        return $this->dataAssunzione;
     }
 
-    public function printFullEmployee(){
+    public function setdataAssunzione($dataAssunzione)
+    {
 
+        $this->dataAssunzione = $dataAssunzione;
     }
 
+    public function printFullEmployee()
+    {
+        return $this->getNome() . " " . $this->getCognome() . " " . $this->getDataDiNascita() . " " . $this->getStipendio();
+    }
 
+    public function __toString() {
+        return $this->printFullEmployee();
+    }
 }
 
-$em1 = new Employee ($p1, "1000 €");
-
-
+$em1 = new Employee("Adriano", "Griamldi",  "01/01/2000", "1000 €");
+$em2 = new Employee("Loris", "barbiero", "01/01/2010", "900 €");
+echo $em1 . "<br>";
+echo $em2
 ?>
