@@ -34,7 +34,6 @@ class Persona
 
     public function __construct($nome, $cognome, $dataDiNascita)
     {
-
         $this->setNome($nome);
         $this->setCognome($cognome);
         $this->setDataDiNascita($dataDiNascita);
@@ -42,39 +41,32 @@ class Persona
 
     public function getNome()
     {
-
         return $this->nome;
     }
     public function setNome($nome)
     {
-
         $this->nome = $nome;
     }
     public function getCognome()
     {
-
         return $this->cognome;
     }
     public function setCognome($cognome)
     {
-
         $this->cognome = $cognome;
     }
 
     public function getDataDiNascita()
     {
-
         return $this->dataDiNascita;
     }
     public function setDataDiNascita($dataDiNascita)
     {
-
         $this->dataDiNascita = $dataDiNascita;
     }
 
     public function printFullPerson()
     {
-
         return $this->getNome() . " " . $this->getCognome() . " " . $this->getDataDiNascita();
     }
 
@@ -102,24 +94,20 @@ class Employee extends Persona
 
     public function getStipendio()
     {
-
         return $this->stipendio;
     }
     public function setStipendio($stipendio)
     {
-
         $this->stipendio = $stipendio;
     }
 
     public function getDataAssunzione()
     {
-
         return $this->dataAssunzione;
     }
 
     public function setdataAssunzione($dataAssunzione)
     {
-
         $this->dataAssunzione = $dataAssunzione;
     }
 
