@@ -67,7 +67,7 @@ class Persona
 
     public function printFullPerson()
     {
-        return $this->getNome() . " " . $this->getCognome() . " " . $this->getDataDiNascita();
+        return $this-> getNome() . " " . $this-> getCognome() . " " . $this-> getDataDiNascita();
     }
 
     public function __toString()
@@ -87,42 +87,43 @@ class Employee extends Persona
     private $dataAssunzione;
     private $casa;
 
-    public function __construct($nome, $cognome, $dataDiNascita, $stipendio, $casa)
+    public function __construct($nome, $cognome, $dataDiNascita, $stipendio, $casa, $dataAssunzione)
     {
         parent::__construct($nome, $cognome, $dataDiNascita);
-        $this->setStipendio($stipendio);
-        $this->setCasa($casa);
+        $this->stipendio=$stipendio;
+        $this->casa= $casa;
+        $this->dataAssunzione= $dataAssunzione;
     }
 
-    public function getStipendio()
-    {
-        return $this->stipendio;
-    }
-    public function setStipendio($stipendio)
-    {
-        $this->stipendio = $stipendio;
-    }
+    // public function getStipendio()
+    // {
+    //     return $this->stipendio;
+    // }
+    // public function setStipendio($stipendio)
+    // {
+    //     $this->stipendio = $stipendio;
+    // }
 
-    public function getDataAssunzione()
-    {
-        return $this->dataAssunzione;
-    }
+    // public function getDataAssunzione()
+    // {
+    //     return $this->dataAssunzione;
+    // }
 
-    public function setdataAssunzione($dataAssunzione)
-    {
-        $this->dataAssunzione = $dataAssunzione;
-    }
-    public function getCasa()
-    {
-        return $this->casa;
-    }
-    public function setCasa($casa)
-    {
-        $this->casa = $casa;
-    }
+    // public function setdataAssunzione($dataAssunzione)
+    // {
+    //     $this->dataAssunzione = $dataAssunzione;
+    // }
+    // public function getCasa()
+    // {
+    //     return $this->casa;
+    // }
+    // public function setCasa($casa)
+    // {
+    //     $this->casa = $casa;
+    // }
     public function printFullEmployee()
     {
-        return $this->getNome() . " " . $this->getCognome() . " " . $this->getDataDiNascita() . " " . $this->getStipendio() . " " . $this->getCasa();
+        return $this->printFullPerson() . " " . $this->stipendio . " " . $this->casa . " " . $this->dataAssunzione;
     }
 
     public function __toString() {
@@ -130,8 +131,8 @@ class Employee extends Persona
     }
 }
 
-$em1 = new Employee("Adriano", "Griamldi",  "01/01/2000", "1000 €", "apparmento");
-$em2 = new Employee("Loris", "barbiero", "01/01/2010", "5000 €", "villa");
+$em1 = new Employee("Adriano", "Griamldi",  "01/01/2000", "1000 €", "apparmento","10/10/2000");
+$em2 = new Employee("Loris", "barbiero", "01/01/2010", "5000 €", "villa","10/10/2000");
 echo $em1 . "<br>";
 echo $em2
 ?>
