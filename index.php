@@ -131,8 +131,8 @@ class Employee extends Persona
     }
 }
 
-$em1 = new Employee("Adriano", "Griamldi",  "01/01/2000", "1000 €", "apparmento","10/10/2000");
-$em2 = new Employee("Loris", "barbiero", "01/01/2010", "5000 €", "villa","10/10/2000");
+$em1 = new Employee("Adriano", "Griamldi",  "01/01/2000", "1000 €", "apparmento", "10/10/2000");
+$em2 = new Employee("Loris", "barbiero", "01/01/2010", "5000 €", "villa", "10/10/2000");
 echo $em1 . "<br>";
 echo $em2
 ?>
